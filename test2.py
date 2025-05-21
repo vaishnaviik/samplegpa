@@ -6,6 +6,8 @@ subjects={"Semester 1":[("CD111",3),("CD112",3),("CD113",3),("CD114",4),("CD151"
 data={}
 gradepoints= {"A+": 10, "A": 9, "B": 8, "C": 7, "D": 6, "E": 5, "F": 0}
 
+st.set_page_config(page_title="CGPA Caluculator")
+
 def get_sgpa(sem):
   global subjects,data
   courseskey=f"Semester {sem}"
@@ -38,7 +40,7 @@ def finalcgpa():
   totalpoints=0
   totalcredits=0
 
-  for sem, (sgpa,credits) in data.items():
+  for sem,(sgpa,credits) in data.items():
     totalpoints+=sgpa*credits
     totalcredits+=credits
 
